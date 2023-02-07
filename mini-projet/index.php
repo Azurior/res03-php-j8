@@ -85,6 +85,7 @@ if(isset($_POST['userEmail']) && !empty($_POST['userEmail'])
 {
     var_dump($_POST['userEmail']);
     var_dump($_POST['userPassword']);
+    var_dump(password_verify($_POST['userPassword'], loadUser($_POST['userEmail'], $db)->getPassword()));
     if(password_verify($_POST['userPassword'], loadUser($_POST['userEmail'], $db)->getPassword()) === true)
     {
         

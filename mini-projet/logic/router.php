@@ -6,29 +6,29 @@ function checkRoute(string $route) : void
         
         require 'pages/login.php';
         
-    }else if($route === 'creer-un-compte'){
+    }
+    else if($route === 'creer-un-compte'){
         
         require 'pages/register.php';
         
-    }else if($route === 'admin-posts'){
+    }
+    else if($route === 'admin-posts'){
         
-        if(isset($_SESSION['session']) && $_SESSION['session'] === true){
-            
-            require 'pages/admin/post.php';
+        require 'pages/admin/post.php';
         
-        }
+        // if(isset($_SESSION['session']) && $_SESSION['session'] === true){}
         
-    }else if($route === 'admin-categories'){
+    }
+    else if($route === 'admin-categories'){
         
-        if(isset($_SESSION['session']) && $_SESSION['session'] === true){
+        require 'pages/admin/post-category.php';
         
-        require 'pages/admin/homepage.php';
+       // if(isset($_SESSION['session']) && $_SESSION['session'] === true){}
         
-        }
+    }
+    else{
         
-    }else{
-        
-        require 'pages/homepage.php;'
+        require 'pages/homepage.php';
     }
 }
 

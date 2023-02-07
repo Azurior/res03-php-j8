@@ -7,7 +7,7 @@ class User {
     private string $last_name;
     private string $email;
     private string $password;
-    private Post $posts;
+    private array $posts;
     
     public function __construct(string $first_name, string $last_name, string $email, string $password){
         
@@ -94,7 +94,7 @@ class User {
         
         for($i = 0; $i < count($this->posts); $i++){
             if($this->posts[$i]->getId() === $post->getId()){
-                unset($this->posts[$i]->getId());
+                unset($this->posts[$i]);
                 return $this->posts;
             }
         }

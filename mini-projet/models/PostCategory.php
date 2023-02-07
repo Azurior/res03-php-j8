@@ -59,7 +59,24 @@ class PostCategory {
     // Création des méthodes
     
     
+    public function addPost(Post $post) : array
+    {
+        
+        return $this->posts[] = $post;
+        
+    }
     
+    public function removePost(Post $post) : array
+    {
+        
+        for($i = 0; $i < count($this->posts); $i++){
+            if($this->posts[$i] === $post){
+                unset($this->posts[$i]);
+                return $this->posts;
+            }
+        }
+        
+    }
     
     
 }
